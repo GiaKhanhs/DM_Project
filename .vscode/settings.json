@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Program Files\\Weka-3-9-6\\weka-src.jar",
+            "c:\\Program Files\\Weka-3-9-6\\weka.jar"
+        ],
+        "exclude": [
+            "c:\\Program Files\\Weka-3-9-6\\arpack_combined.jar",
+            "c:\\Program Files\\Weka-3-9-6\\core.jar"
+        ]
+    }
+}
