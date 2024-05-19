@@ -1,4 +1,5 @@
 package model.based_models.models;
+
 import model.Command;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.Evaluation;
@@ -8,6 +9,11 @@ import weka.core.converters.ConverterUtils.DataSource;
 
 public class NaiveBayesClassifier implements Command {
 
+    public static void main(String[] args) {
+        Command cmd = new NaiveBayesClassifier();
+        cmd.exec();
+    }
+
     @Override
     public void exec() {
         try {
@@ -15,7 +21,7 @@ public class NaiveBayesClassifier implements Command {
             // Load training dataset
             DataSource trainSource = new DataSource("data\\segment-challenge.arff");
             Instances trainDataset = trainSource.getDataSet();
- 
+
             // Load testing dataset
             DataSource testSource = new DataSource("data\\segment-test.arff");
             Instances testDataset = testSource.getDataSet();
@@ -24,11 +30,11 @@ public class NaiveBayesClassifier implements Command {
             if (trainDataset.classIndex() == -1) {
                 trainDataset.setClassIndex(trainDataset.numAttributes() - 1);
             }
-            
+
             if (testDataset.classIndex() == -1) {
                 testDataset.setClassIndex(testDataset.numAttributes() - 1);
             }
-    
+
 
             // Create and train the NaiveBayes classifier
             NaiveBayes nb = new NaiveBayes();
@@ -39,7 +45,7 @@ public class NaiveBayesClassifier implements Command {
 
             // Output the evaluation results
             System.out.println(eval.toSummaryString("\nResults\n======\n", false));
-            
+
             // Print the confusion matrix
             System.out.println("Confusion Matrix:\n" + eval.toMatrixString());
 
@@ -48,10 +54,5 @@ public class NaiveBayesClassifier implements Command {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        Command cmd = new NaiveBayesClassifier();
-        cmd.exec();
     }
 }

@@ -1,6 +1,7 @@
 package model.based_models.hyperparameter_tuning;
 
 //import model.Command;
+
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
@@ -9,7 +10,7 @@ import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class NaiveBayesTuning {
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
         try {
             // Load training dataset
             DataSource trainSource = new DataSource("data\\segment-challenge.arff");

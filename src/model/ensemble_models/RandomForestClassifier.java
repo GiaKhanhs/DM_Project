@@ -1,16 +1,9 @@
 package model.ensemble_models;
 
 
-import java.io.File;
-import java.io.IOException;
-
 import util.Loader;
-import util.Converter;
-import util.Printer;
-
-import weka.classifiers.Classifier;
-import weka.classifiers.trees.RandomForest;
 import weka.classifiers.Evaluation;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
 public class RandomForestClassifier {
@@ -36,11 +29,11 @@ public class RandomForestClassifier {
 
 
             Evaluation eval = new Evaluation(work_data_train);
-		    eval.evaluateModel(forest, work_data_test);
+            eval.evaluateModel(forest, work_data_test);
 
             System.out.println("=== Random Forest Classifier Model ===\n");
-			System.out.println(forest);
-			/** Print the algorithm summary */
+            System.out.println(forest);
+            /** Print the algorithm summary */
             System.out.println("** Decision Tress Evaluation with Datasets **");
             System.out.println(eval.toSummaryString());
             System.out.print(" the expression for the input data as per alogorithm is ");
@@ -51,5 +44,5 @@ public class RandomForestClassifier {
         } catch (Exception e) {
             e.printStackTrace();
         }
-}
+    }
 }
