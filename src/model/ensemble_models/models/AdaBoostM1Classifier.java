@@ -38,7 +38,7 @@ public class AdaBoostM1Classifier {
         eval.evaluateModel(ada, testingDataSet);
 
 
-        System.out.println("=== Random Forest Classifier Model ===\n");
+        System.out.println("=== AdaBoostM1 Classifier Model ===\n");
         System.out.println(ada);
         /** Print the algorithm summary */
         System.out.println("** Decision Tress Evaluation with Datasets **");
