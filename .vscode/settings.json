@@ -7,7 +7,8 @@
         "include": [
             "c:\\Program Files\\Weka-3-9-6\\weka.jar",
             "lib\\weka.jar",
-            "c:\\Program Files\\Weka-3-9-6\\weka-src.jar"
+            "c:\\Program Files\\Weka-3-9-6\\weka-src.jar",
+            "c:\\Program Files\\Weka-3-9-6\\extraTrees.jar"
         ],
         "exclude": [
             "c:\\Program Files\\Weka-3-9-6\\arpack_combined.jar",
