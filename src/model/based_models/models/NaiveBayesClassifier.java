@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class NaiveBayesClassifier implements Command {
@@ -18,12 +17,12 @@ public class NaiveBayesClassifier implements Command {
     public void exec() {
         try {
             // Load dataset
-            // Load training dataset
-            DataSource trainSource = new DataSource("data\\segment-challenge.arff");
+            // Load dataset
+            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainDataset = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\segment-test.arff");
+            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testDataset = testSource.getDataSet();
 
             // Set class index to the last attribute (assuming the last attribute is the class label)

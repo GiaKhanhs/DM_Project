@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class J48Classifier implements Command {
@@ -37,6 +36,8 @@ public class J48Classifier implements Command {
             // Create and train the J48 classifier
             J48 j48 = new J48();
             j48.buildClassifier(trainDataset);
+
+            System.out.println("J48 params" + String.join(" ", j48.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(j48, testDataset);
