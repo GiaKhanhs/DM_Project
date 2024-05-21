@@ -1,6 +1,8 @@
 package model.based_models.hyperparameter_tuning;
 
 import weka.classifiers.functions.SMO;
+import model.Command;
+import model.based_models.models.IBkClassifier;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
@@ -8,14 +10,14 @@ import weka.core.SerializationHelper;
 import weka.core.Utils;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class SVMParameterTuning {
-
-    public static void main(String[] args) {
+public class SVMParameterTuning implements Command {
+    @Override
+    public void exec()  {
         try {
             // Load datasets
-            Instances trainDataset = loadDataset("data\\segment-challenge.arff");
-            Instances testDataset = loadDataset("data\\segment-test.arff");
-            Instances validDataset = loadDataset("data\\segment-challenge.arff");
+            Instances trainDataset = loadDataset("data\\family\\training_data.arff");
+            Instances testDataset = loadDataset("data\\family\\test_data.arff");
+            Instances validDataset = loadDataset("data\\family\\validation_data.arff");
 
             // Set class index to the last attribute
             setClassIndex(trainDataset);
@@ -44,7 +46,7 @@ public class SVMParameterTuning {
                 CVParameterSelection ps = new CVParameterSelection();
                 ps.setClassifier(smo);
                 ps.setNumFolds(5); // 5-fold cross-validation
-                ps.addCVParameter("C 0.1 5.0 10");
+                ps.addCVParameter("C -0.1 1 10");
 
                 // Perform cross-validation to find the best parameters on the validation dataset
                 ps.buildClassifier(validDataset);

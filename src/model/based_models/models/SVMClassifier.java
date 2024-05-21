@@ -9,7 +9,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 
 public class SVMClassifier implements Command {
     public static void main(String[] args) {
-        Command cmd = new LogisticRegressionClassifier();
+        Command cmd = new SVMClassifier();
         cmd.exec();
     }
 
@@ -34,7 +34,7 @@ public class SVMClassifier implements Command {
             }
 
 
-            // Create and train the NaiveBayes classifier
+            // Create and train the SVM classifier
             SMO svm = new SMO();
             svm.buildClassifier(trainDataset);
 

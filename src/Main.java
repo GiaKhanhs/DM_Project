@@ -50,12 +50,19 @@ public class Main {
         IBk();
         System.out.println("=============Logistic Regression Classification=============");
         LR();
+        System.out.println("=============Logistic Regression Tuning=============");
+        LRTuning();
         System.out.println("=============Naive Bayes Classification=============");
         NB();
         System.out.println("=============SVM Classification=============");
         SVM();
+        System.out.println("=============SVM Tuning=============");
+        SVMTuning();
         System.out.println("=============J48 Classification=============");
         J48();
+        System.out.println("=============J48 Tuning=============");
+        J48Tuning();
+        
     }
     public static void OneR() {
 		(new OneRClassifier()).exec();
@@ -74,5 +81,14 @@ public class Main {
 	}
     public static void J48() {
 		(new J48Classifier()).exec();
+	}
+    public static void LRTuning() {
+		(new LogisticRegressionTuning()).exec();
+	} 
+    public static void J48Tuning() {
+		(new J48Tuning()).exec();
+	} 
+    public static void SVMTuning() {
+		(new SVMParameterTuning()).exec();
 	}
 }

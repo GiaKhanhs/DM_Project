@@ -34,7 +34,7 @@ public class J48Classifier implements Command {
             }
 
 
-            // Create and train the NaiveBayes classifier
+            // Create and train the J48 classifier
             J48 j48 = new J48();
             j48.buildClassifier(trainDataset);
 
