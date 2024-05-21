@@ -38,6 +38,8 @@ public class ExtraTreeClassifier implements Command{
 
             Evaluation eval = new Evaluation(trainingDataSet);
             eval.evaluateModel(ET, testingDataSet);
+            // Print the parameters of the RandomForest model
+            System.out.println("RandomForest parameters: " + String.join(" ", ET.getOptions()));
 
 
             // Output the evaluation results
