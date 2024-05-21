@@ -8,6 +8,7 @@ import model.ensemble_models.hyperparameter_tuning.RandomForestTuning;
 import model.ensemble_models.models.AdaBoostM1Classifier;
 import model.ensemble_models.models.ExtraTreeClassifier;
 import model.ensemble_models.models.RandomForestClassifier;
+import weka.core.converters.ConverterUtils.DataSource;
 
 
 public class Main {
@@ -66,8 +67,20 @@ public class Main {
 
     }
 
+    public static DataSource trainSource;
+    public static DataSource testSource;
+
+    {
+        try {
+            trainSource = new DataSource("data/family/training_data.arff");
+            testSource = new DataSource("data/family/test_data.arff");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void RandomForest() {
-        (new RandomForestClassifier()).exec();
+        (new RandomForestClassifier()).exec(trainSource, testSource);
     }
 
     public static void RandomForestTuning() {

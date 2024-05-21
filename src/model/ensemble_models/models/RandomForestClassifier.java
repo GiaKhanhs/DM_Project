@@ -7,9 +7,21 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class RandomForestClassifier implements Command {
+    public static DataSource trainSource;
+    public static DataSource testSource;
+
+    {
+        try {
+            trainSource = new DataSource("data/family/training_data.arff");
+            testSource = new DataSource("data/family/test_data.arff");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
         Command cmd = new RandomForestClassifier();
-        cmd.exec();
+        cmd.exec(trainSource, testSource);
     }
 
     private static void setClassIndex(Instances dataset) {
@@ -19,14 +31,12 @@ public class RandomForestClassifier implements Command {
     }
 
     @Override
-    public void exec() {
+    public void exec(DataSource trainSource, DataSource testSource) {
         try {
             // Load datasets
-            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainingDataSet = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testingDataSet = testSource.getDataSet();
 
             // Set class index to the last attribute
