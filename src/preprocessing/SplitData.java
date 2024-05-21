@@ -10,7 +10,7 @@ import java.util.Random;
 public class SplitData {
     public static void splitData() throws Exception {
         // Load dataset
-        DataSource source = new DataSource("data_dm\\family\\family_FS.arff");
+        DataSource source = new DataSource("data\\family\\family_FS.arff");
         Instances allData = source.getDataSet();
 
         // Randomize the dataset with a seed

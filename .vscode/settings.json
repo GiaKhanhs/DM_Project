@@ -9,7 +9,15 @@
             "lib\\weka.jar",
             "c:\\Program Files\\Weka-3-9-6\\weka-src.jar",
             "c:\\Program Files\\Weka-3-9-6\\extraTrees.jar",
-            "lib/extraTrees.jar"
+            "lib/extraTrees.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.base.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.controls.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.fxml.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.graphics.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.media.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.swing.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx.web.jar",
+            "d:\\Set_up\\openjfx-22.0.1_windows-x64_bin-sdk\\javafx-sdk-22.0.1\\lib\\javafx-swt.jar"
         ],
         "exclude": [
             "c:\\Program Files\\Weka-3-9-6\\arpack_combined.jar",

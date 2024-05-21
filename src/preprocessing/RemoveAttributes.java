@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 public class RemoveAttributes {
     public static void removeAttributes() throws Exception {
         // Load dataset
-        DataSource source = new DataSource("data_dm\\family.arff");
+        DataSource source = new DataSource("data\\family\\family.arff");
         Instances data = source.getDataSet();
 
         // Setup filter

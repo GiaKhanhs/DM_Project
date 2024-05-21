@@ -86,6 +86,22 @@
             "request": "launch",
             "mainClass": "preprocessing.dataProcessor",
             "projectName": "DM_Project_945f5055"
+        },
+        {
+            "type": "java",
+            "name": "Launch PieALL",
+            "request": "launch",
+            "mainClass": "preprocessing.helloFX.PieChartAll",
+            "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "DM_Project_945f5055"
+        },
+        {
+            "type": "java",
+            "name": "Launch PieFactor",
+            "request": "launch",
+            "mainClass": "preprocessing.helloFX.PieChartFactors",
+            "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "DM_Project_945f5055"
         }
     ]
 }
