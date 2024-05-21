@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.rules.OneR;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class OneRClassifier implements Command {
@@ -38,6 +37,8 @@ public class OneRClassifier implements Command {
             // Create and train the NaiveBayes classifier
             OneR oner = new OneR();
             oner.buildClassifier(trainDataset);
+
+            System.out.println("OneR params" + String.join(" ", oner.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(oner, testDataset);

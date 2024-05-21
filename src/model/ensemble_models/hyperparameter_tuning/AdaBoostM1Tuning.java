@@ -47,7 +47,7 @@ public class AdaBoostM1Tuning implements Command {
             // Set up CVParameterSelection for parameter tuning
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(ada);
-            ps.setNumFolds(10); // 5-fold cross-validation
+            ps.setNumFolds(10); // 10-fold cross-validation
             ps.addCVParameter("P 10 100 10"); // Number of iterations (10 to 100 in steps of 10)
 
             // Perform cross-validation to find the best parameters on the validation dataset

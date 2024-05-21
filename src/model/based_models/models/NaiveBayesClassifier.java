@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class NaiveBayesClassifier implements Command {
@@ -39,6 +38,8 @@ public class NaiveBayesClassifier implements Command {
             // Create and train the NaiveBayes classifier
             NaiveBayes nb = new NaiveBayes();
             nb.buildClassifier(trainDataset);
+
+            System.out.println("NB params" + String.join(" ", nb.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(nb, testDataset);

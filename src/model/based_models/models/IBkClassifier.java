@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.lazy.IBk;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class IBkClassifier implements Command {
@@ -38,6 +37,8 @@ public class IBkClassifier implements Command {
             // Create and train the NaiveBayes classifier
             IBk ibk = new IBk();
             ibk.buildClassifier(trainDataset);
+
+            System.out.println("IBk params" + String.join(" ", ibk.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(ibk, testDataset);

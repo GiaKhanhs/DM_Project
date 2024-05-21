@@ -4,7 +4,6 @@ import weka.classifiers.functions.Logistic;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class LogisticRegressionTuning implements Command {

@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.functions.SMO;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class SVMClassifier implements Command {
@@ -37,6 +36,8 @@ public class SVMClassifier implements Command {
             // Create and train the SVM classifier
             SMO svm = new SMO();
             svm.buildClassifier(trainDataset);
+
+            System.out.println("SVM params" + String.join(" ", svm.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(svm, testDataset);

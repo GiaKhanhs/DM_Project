@@ -4,7 +4,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class J48Classifier implements Command {
