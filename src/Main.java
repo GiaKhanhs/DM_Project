@@ -25,7 +25,7 @@ public class Main {
         System.out.println("=============RandomForestTuning Classification=============");
         RandomForestTuning();
 
-        // AdaBoostM1
+        // // AdaBoostM1
         System.out.println("=============AdaBoostM1 Classification=============");
         AdaBoostM1();
 
