@@ -1,27 +1,18 @@
 package model.ensemble_models.models;
 
 import model.Command;
+import preprocessing.dataImporter;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.ExtraTree;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class ExtraTreeClassifier implements Command {
-    public static DataSource trainSource;
-    public static DataSource testSource;
 
-    {
-        try {
-            trainSource = new DataSource("data/family/training_data.arff");
-            testSource = new DataSource("data/family/test_data.arff");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static void main(String[] args) {
         Command cmd = new ExtraTreeClassifier();
-        cmd.exec(trainSource, testSource);
+        cmd.exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     private static void setClassIndex(Instances dataset) {

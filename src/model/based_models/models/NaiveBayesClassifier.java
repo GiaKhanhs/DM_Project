@@ -1,6 +1,7 @@
 package model.based_models.models;
 
 import model.Command;
+import preprocessing.dataImporter;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
@@ -10,19 +11,16 @@ public class NaiveBayesClassifier implements Command {
 
     public static void main(String[] args) {
         Command cmd = new NaiveBayesClassifier();
-        cmd.exec();
+        cmd.exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     @Override
-    public void exec() {
+    public void exec(DataSource trainSource, DataSource testSource) {
         try {
             // Load dataset
-            // Load dataset
-            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainDataset = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testDataset = testSource.getDataSet();
 
             // Set class index to the last attribute (assuming the last attribute is the class label)

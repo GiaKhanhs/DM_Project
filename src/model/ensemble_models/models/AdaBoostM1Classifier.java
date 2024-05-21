@@ -1,6 +1,7 @@
 package model.ensemble_models.models;
 
 import model.Command;
+import preprocessing.dataImporter;
 import weka.classifiers.Evaluation;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.core.Instances;
@@ -9,7 +10,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 public class AdaBoostM1Classifier implements Command {
     public static void main(String[] args) {
         Command cmd = new AdaBoostM1Classifier();
-        cmd.exec();
+        cmd.exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     private static void setClassIndex(Instances dataset) {
@@ -19,14 +20,12 @@ public class AdaBoostM1Classifier implements Command {
     }
 
     @Override
-    public void exec() {
+    public void exec(DataSource trainSource, DataSource testSource) {
         try {
             // Load datasets
-            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainingDataSet = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testingDataSet = testSource.getDataSet();
 
             // Set class index to the last attribute

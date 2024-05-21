@@ -1,25 +1,14 @@
 package model.based_models.hyperparameter_tuning;
 
-import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.functions.Logistic;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
-import weka.core.converters.ConverterUtils.DataSource;
 
-public class LogisticRegressionTuning implements Command {
+import static preprocessing.dataImporter.*;
 
-    /**
-     * Load a dataset from an ARFF file.
-     *
-     * @param filePath the path to the ARFF file
-     * @return the loaded Instances object
-     * @throws Exception if there is an error loading the dataset
-     */
-    private static Instances loadDataset(String filePath) throws Exception {
-        DataSource source = new DataSource(filePath);
-        return source.getDataSet();
-    }
+public class LogisticRegressionTuning {
+
 
     /**
      * Set the class index to the last attribute if it is not already set.
@@ -35,9 +24,9 @@ public class LogisticRegressionTuning implements Command {
     public void exec() {
         try {
             // Load datasets
-            Instances trainDataset = loadDataset("data\\family\\training_data.arff");
-            Instances testDataset = loadDataset("data\\family\\test_data.arff");
-            Instances validDataset = loadDataset("data\\family\\validation_data.arff");
+            Instances trainDataset = trainSource.getDataSet();
+            Instances testDataset = testSource.getDataSet();
+            Instances validDataset = validSource.getDataSet();
 
             // Set class index to the last attribute
             setClassIndex(trainDataset);

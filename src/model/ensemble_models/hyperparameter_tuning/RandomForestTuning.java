@@ -1,16 +1,19 @@
 package model.ensemble_models.hyperparameter_tuning;
 
 import model.Command;
+import preprocessing.dataImporter;
 import weka.classifiers.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
+import static preprocessing.dataImporter.validSource;
+
 public class RandomForestTuning implements Command {
     public static void main(String[] args) {
         Command cmd = new RandomForestTuning();
-        cmd.exec();
+        cmd.exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     private static void setClassIndex(Instances dataset) {
@@ -20,18 +23,15 @@ public class RandomForestTuning implements Command {
     }
 
     @Override
-    public void exec() {
+    public void exec(DataSource trainSource, DataSource testSource) {
         try {
             // Load datasets
-            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainingDataSet = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testingDataSet = testSource.getDataSet();
 
             // Load validation dataset
-            DataSource validSource = new DataSource("data\\family\\validation_data.arff");
             Instances validDataset = validSource.getDataSet();
 
             // Set class index to the last attribute
