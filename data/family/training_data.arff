@@ -16,7 +16,7 @@
 @attribute c7 numeric
 @attribute c8 numeric
 @attribute c9 numeric
-@attribute Level numeric
+@attribute Level {0, 1, 2, 3, 4}
 
 @data
 1,0.5,0.5,0,3,5,4,2,3,3,3,3,2,2,3,0,4
