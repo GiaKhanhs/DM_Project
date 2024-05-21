@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="extraTrees">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/extraTrees.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
