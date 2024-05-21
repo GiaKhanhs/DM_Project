@@ -1,53 +1,67 @@
 package model.ensemble_models.models;
 
+import model.Command;
 import weka.classifiers.Evaluation;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class AdaBoostM1Classifier {
+public class AdaBoostM1Classifier implements Command {
+    public static void main(String[] args) {
+        Command cmd = new AdaBoostM1Classifier();
+        cmd.exec();
+    }
+
     private static void setClassIndex(Instances dataset) {
         if (dataset.classIndex() == -1) {
             dataset.setClassIndex(dataset.numAttributes() - 1);
         }
     }
 
-    public static double Evaluate(String trainPath, String testPath, String validPath) throws Exception {
-        
-        // Load datasets
-        DataSource trainSource = new DataSource(trainPath);
-        Instances trainingDataSet = trainSource.getDataSet();
+    @Override
+    public void exec() {
+        try {
+            // Load datasets
+            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
+            Instances trainingDataSet = trainSource.getDataSet();
 
-        // Load testing dataset
-        DataSource testSource = new DataSource(testPath);
-        Instances testingDataSet = testSource.getDataSet();
+            // Load testing dataset
+            DataSource testSource = new DataSource("data\\family\\test_data.arff");
+            Instances testingDataSet = testSource.getDataSet();
 
-        // Load validation dataset
-        DataSource validSource = new DataSource(validPath);
-        Instances validDataset = validSource.getDataSet();
+            // Set class index to the last attribute
+            setClassIndex(trainingDataSet);
+            setClassIndex(testingDataSet);
 
-        // Set class index to the last attribute
-        setClassIndex(trainingDataSet);
-        setClassIndex(testingDataSet);
-        setClassIndex(validDataset);
+            AdaBoostM1 ada = new AdaBoostM1();
+            ada.buildClassifier(trainingDataSet);
 
-        AdaBoostM1 ada = new AdaBoostM1();
-        ada.buildClassifier(trainingDataSet);
+            Evaluation eval = new Evaluation(trainingDataSet);
+            eval.evaluateModel(ada, testingDataSet);
 
-        Evaluation eval = new Evaluation(trainingDataSet);
-        eval.evaluateModel(ada, testingDataSet);
+            // Output the evaluation results
+            System.out.println(eval.toSummaryString("\nPre-tuning AdaBoostM1\n======\n", false));
 
+            // Print the confusion matrix
+            System.out.println(eval.toMatrixString("=== Confusion matrix ==="));
 
-        System.out.println("=== AdaBoostM1 Classifier Model ===\n");
-        System.out.println(ada);
-        /** Print the algorithm summary */
-        System.out.println("** Decision Tress Evaluation with Datasets **");
-        System.out.println(eval.toSummaryString());
-        System.out.print(" the expression for the input data as per alogorithm is ");
-        System.out.println(ada);
-        System.out.println(eval.toMatrixString());
-        System.out.println(eval.toClassDetailsString());
+            // Print additional evaluation metrics
+            System.out.println("Correct % = " + eval.pctCorrect());
+            System.out.println("Incorrect % = " + eval.pctIncorrect());
+            System.out.println("AUC = " + eval.areaUnderROC(1));
+            System.out.println("Kappa = " + eval.kappa());
+            System.out.println("MAE = " + eval.meanAbsoluteError());
+            System.out.println("RMSE = " + eval.rootMeanSquaredError());
+            System.out.println("RAE = " + eval.relativeAbsoluteError());
+            System.out.println("RRSE = " + eval.rootRelativeSquaredError());
+            System.out.println("Precision = " + eval.precision(1));
+            System.out.println("Recall = " + eval.recall(1));
+            System.out.println("F-Measure = " + eval.fMeasure(1));
+            System.out.println("Error Rate = " + eval.errorRate());
+            System.out.println(eval.toClassDetailsString());
 
-        return eval.pctCorrect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
