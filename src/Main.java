@@ -48,11 +48,12 @@ public class Main {
         System.out.println("=============Logistic Regression Tuning=============");
         LRTuning();
         System.out.println("=============Naive Bayes Classification=============");
-        NB();
+        NB(); 
         System.out.println("=============SVM Classification=============");
         SVM();
         System.out.println("=============SVM Tuning=============");
         SVMTuning(); 
+        
         
         System.out.println("=============J48 Classification=============");
         J48();
