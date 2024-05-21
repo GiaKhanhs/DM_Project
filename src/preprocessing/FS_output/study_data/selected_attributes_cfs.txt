@@ -1,0 +1,16 @@
+Selected attributes by CfsSubsetEval and GreedyStepwise:
+a3
+a4
+b1
+b11
+b13
+c1
+c2
+c3
+c4
+c5
+c6
+c7
+c8
+c9
+Level
