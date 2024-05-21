@@ -1,20 +1,21 @@
 package model.based_models.hyperparameter_tuning;
 
 import weka.classifiers.trees.J48;
+import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class J48Tuning {
-
-    public static void main(String[] args) {
+public class J48Tuning implements Command {
+    @Override
+    public void exec()  {
         try {
             // Load datasets
-            Instances trainDataset = loadDataset("data\\segment-challenge.arff");
-            Instances testDataset = loadDataset("data\\segment-test.arff");
-            Instances validDataset = loadDataset("data\\segment-challenge.arff");
+            Instances trainDataset = loadDataset("data\\family\\training_data.arff");
+            Instances testDataset = loadDataset("data\\family\\test_data.arff");
+            Instances validDataset = loadDataset("data\\family\\validation_data.arff");
 
             // Set class index to the last attribute
             setClassIndex(trainDataset);
@@ -24,8 +25,8 @@ public class J48Tuning {
             // Hyperparameter tuning
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(new J48());
-            ps.setNumFolds(10); // 5-fold cross-validation
-            ps.addCVParameter("M 1 10 10"); 
+            ps.setNumFolds(10); // 10-fold cross-validation
+            ps.addCVParameter("M 50 150 1"); 
 
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);

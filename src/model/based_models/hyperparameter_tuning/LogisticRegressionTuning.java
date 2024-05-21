@@ -1,5 +1,5 @@
 package model.based_models.hyperparameter_tuning;
-
+import model.Command;
 import weka.classifiers.functions.Logistic;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
@@ -7,14 +7,14 @@ import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class LogisticRegressionTuning {
+public class LogisticRegressionTuning implements Command {
 
-    public static void main(String[] args) {
+    public void exec() {
         try {
             // Load datasets
-            Instances trainDataset = loadDataset("data\\segment-challenge.arff");
-            Instances testDataset = loadDataset("data\\segment-test.arff");
-            Instances validDataset = loadDataset("data\\segment-challenge.arff");
+            Instances trainDataset = loadDataset("data\\family\\training_data.arff");
+            Instances testDataset = loadDataset("data\\family\\test_data.arff");
+            Instances validDataset = loadDataset("data\\family\\validation_data.arff");
 
             // Set class index to the last attribute
             setClassIndex(trainDataset);
@@ -25,7 +25,7 @@ public class LogisticRegressionTuning {
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(new Logistic());
             ps.setNumFolds(5); // 5-fold cross-validation
-            ps.addCVParameter("R 1.0E-6 1.0E-3 10"); // Ridge parameter
+            ps.addCVParameter("R 1.0E-6 1.0E-2 10"); // Ridge parameter
 
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);
