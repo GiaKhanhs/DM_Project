@@ -39,6 +39,8 @@ public class OneRClassifier implements Command {
             OneR oner = new OneR();
             oner.buildClassifier(trainDataset);
 
+            System.out.println("OneR params" + String.join(" ", oner.getOptions()));
+
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(oner, testDataset);
 

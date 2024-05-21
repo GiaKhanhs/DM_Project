@@ -40,6 +40,8 @@ public class NaiveBayesClassifier implements Command {
             NaiveBayes nb = new NaiveBayes();
             nb.buildClassifier(trainDataset);
 
+            System.out.println("NB params" + String.join(" ", nb.getOptions()));
+
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(nb, testDataset);
 

@@ -38,6 +38,8 @@ public class SVMClassifier implements Command {
             SMO svm = new SMO();
             svm.buildClassifier(trainDataset);
 
+            System.out.println("SVM params" + String.join(" ", svm.getOptions()));
+
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(svm, testDataset);
 

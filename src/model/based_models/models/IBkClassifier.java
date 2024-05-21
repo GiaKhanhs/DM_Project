@@ -39,6 +39,8 @@ public class IBkClassifier implements Command {
             IBk ibk = new IBk();
             ibk.buildClassifier(trainDataset);
 
+            System.out.println("IBk params" + String.join(" ", ibk.getOptions()));
+
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(ibk, testDataset);
 
