@@ -1,12 +1,18 @@
+/* 
 import model.ensemble_models.hyperparameter_tuning.AdaBoostM1Tuning;
 import model.ensemble_models.hyperparameter_tuning.ExtraTreeTuning;
 import model.ensemble_models.hyperparameter_tuning.RandomForestTuning;
 import model.ensemble_models.models.AdaBoostM1Classifier;
 import model.ensemble_models.models.ExtraTreeClassifier;
 import model.ensemble_models.models.RandomForestClassifier;
+*/
+import model.Command;
+import model.based_models.hyperparameter_tuning.*;
+import model.based_models.models.*;
 
 public class Main {
     public static void main(String[] args) {
+        /* 
         try {
             String trainSource = "data\\segment-challenge.arff";
             String testSource = "data\\segment-test.arff";
@@ -37,6 +43,36 @@ public class Main {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } */
+        System.out.println("=============OneR Classification=============");
+        OneR();
+        System.out.println("=============IBK Classification=============");
+        IBk();
+        System.out.println("=============Logistic Regression Classification=============");
+        LR();
+        System.out.println("=============Naive Bayes Classification=============");
+        NB();
+        System.out.println("=============SVM Classification=============");
+        SVM();
+        System.out.println("=============J48 Classification=============");
+        J48();
     }
+    public static void OneR() {
+		(new OneRClassifier()).exec();
+	}
+    public static void IBk() {
+		(new IBkClassifier()).exec();
+	}
+    public static void LR() {
+		(new LogisticRegressionClassifier()).exec();
+	}
+    public static void NB() {
+		(new NaiveBayesClassifier()).exec();
+	}
+    public static void SVM() {
+		(new SVMClassifier()).exec();
+	}
+    public static void J48() {
+		(new J48Classifier()).exec();
+	}
 }
