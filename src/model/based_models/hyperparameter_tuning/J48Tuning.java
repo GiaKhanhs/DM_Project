@@ -1,14 +1,13 @@
 package model.based_models.hyperparameter_tuning;
 
-import weka.classifiers.functions.SMO;
+import weka.classifiers.trees.J48;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
-import weka.core.Utils;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class SVMParameterTuning {
+public class J48Tuning {
 
     public static void main(String[] args) {
         try {
@@ -22,60 +21,26 @@ public class SVMParameterTuning {
             setClassIndex(testDataset);
             setClassIndex(validDataset);
 
-            // Arrays to hold kernels and their corresponding parameters
-            String[] kernels = {
-                "weka.classifiers.functions.supportVector.RBFKernel",
-                "weka.classifiers.functions.supportVector.PolyKernel",
-                "weka.classifiers.functions.supportVector.NormalizedPolyKernel"
-            };
-            String[] kernelOptions = {
-                "-G 0.01", // Options for RBFKernel
-                "-E 2.0",  // Options for PolyKernel
-                "-E 2.0"   // Options for NormalizedPolyKernel
-            };
-            double bestAccuracy = -1;
-            String[] bestOptions = null;
+            // Hyperparameter tuning
+            CVParameterSelection ps = new CVParameterSelection();
+            ps.setClassifier(new J48());
+            ps.setNumFolds(10); // 5-fold cross-validation
+            ps.addCVParameter("M 1 10 10"); 
 
-            // Loop through kernels and perform parameter tuning
-            for (int i = 0; i < kernels.length; i++) {
-                SMO smo = new SMO();
-                smo.setOptions(Utils.splitOptions("-K \"" + kernels[i] + " " + kernelOptions[i] + "\""));
-
-                CVParameterSelection ps = new CVParameterSelection();
-                ps.setClassifier(smo);
-                ps.setNumFolds(5); // 5-fold cross-validation
-                ps.addCVParameter("C 0.1 5.0 10");
-
-                // Perform cross-validation to find the best parameters on the validation dataset
-                ps.buildClassifier(validDataset);
-
-                // Create and configure an SMO classifier with the best options
-                SMO tempSmo = new SMO();
-                tempSmo.setOptions(ps.getBestClassifierOptions());
-                tempSmo.buildClassifier(validDataset);
-
-                // Evaluate the model on the validation dataset
-                Evaluation eval = new Evaluation(validDataset);
-                eval.crossValidateModel(tempSmo, validDataset, 5, new java.util.Random(1));
-
-                // Update the best options if current options are better
-                if (eval.pctCorrect() > bestAccuracy) {
-                    bestAccuracy = eval.pctCorrect();
-                    bestOptions = ps.getBestClassifierOptions();
-                }
-            }
+            // Perform cross-validation to find the best parameters on the validation dataset
+            ps.buildClassifier(validDataset);
 
             // Print the best parameters
-            System.out.println("Best Parameters: " + String.join(" ", bestOptions));
+            System.out.println("Best Parameters: " + String.join(" ", ps.getBestClassifierOptions()));
 
-            // Train the SMO classifier with the best parameters
-            SMO svm = new SMO();
-            svm.setOptions(bestOptions);
-            svm.buildClassifier(trainDataset);
+            // Train the Logistic Regression classifier with the best parameters
+            J48 j48 = new J48();
+            j48.setOptions(ps.getBestClassifierOptions());
+            j48.buildClassifier(trainDataset);
 
             // Evaluate the classifier on the test dataset
             Evaluation eval = new Evaluation(trainDataset);
-            eval.evaluateModel(svm, testDataset);
+            eval.evaluateModel(j48, testDataset);
 
             // Output the evaluation results
             System.out.println(eval.toSummaryString("\nResults\n======\n", false));
@@ -97,7 +62,6 @@ public class SVMParameterTuning {
             System.out.println("F-Measure = " + eval.fMeasure(1));
             System.out.println("Error Rate = " + eval.errorRate());
             System.out.println(eval.toClassDetailsString());
-
 
         } catch (Exception e) {
             e.printStackTrace();
