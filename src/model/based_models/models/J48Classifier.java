@@ -38,6 +38,8 @@ public class J48Classifier implements Command {
             J48 j48 = new J48();
             j48.buildClassifier(trainDataset);
 
+            System.out.println("J48 params" + String.join(" ", j48.getOptions()));
+
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(j48, testDataset);
 

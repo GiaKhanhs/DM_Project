@@ -24,8 +24,8 @@ public class LogisticRegressionTuning implements Command {
             // Hyperparameter tuning
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(new Logistic());
-            ps.setNumFolds(5); // 5-fold cross-validation
-            ps.addCVParameter("R 1.0E-6 1.0E-2 10"); // Ridge parameter
+            ps.setNumFolds(10); // 10-fold cross-validation
+            ps.addCVParameter("R 1.0E-10 1.0E-8 100"); // Ridge parameter
 
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);

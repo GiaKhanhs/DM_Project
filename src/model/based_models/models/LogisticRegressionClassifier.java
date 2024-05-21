@@ -17,14 +17,13 @@ public class LogisticRegressionClassifier implements Command {
     public void exec() {
         try {
             // Load dataset
-            // Load training dataset
-            DataSource trainSource = new DataSource("data\\segment-challenge.arff");
+            // Load dataset
+            DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainDataset = trainSource.getDataSet();
 
             // Load testing dataset
-            DataSource testSource = new DataSource("data\\segment-test.arff");
+            DataSource testSource = new DataSource("data\\family\\test_data.arff");
             Instances testDataset = testSource.getDataSet();
-
             // Set class index to the last attribute (assuming the last attribute is the class label)
             if (trainDataset.classIndex() == -1) {
                 trainDataset.setClassIndex(trainDataset.numAttributes() - 1);
@@ -38,6 +37,8 @@ public class LogisticRegressionClassifier implements Command {
             // Create and train the NaiveBayes classifier
             Logistic lr = new Logistic();
             lr.buildClassifier(trainDataset);
+
+            System.out.println("LR params" + String.join(" ", lr.getOptions()));
 
             Evaluation eval = new Evaluation(trainDataset);
             eval.evaluateModel(lr, testDataset);

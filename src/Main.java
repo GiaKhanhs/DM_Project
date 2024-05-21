@@ -37,11 +37,11 @@ public class Main {
         ExtraTree();
 
         System.out.println("=============ExtraTreeTuning Classification=============");
-        ExtraTreeTuning();
+        ExtraTreeTuning(); 
 
         System.out.println("=============OneR Classification=============");
         OneR();
-        System.out.println("=============IBK Classification=============");
+        System.out.println("=============IBK Classification============="); 
         IBk();
         System.out.println("=============Logistic Regression Classification=============");
         LR();
@@ -52,11 +52,12 @@ public class Main {
         System.out.println("=============SVM Classification=============");
         SVM();
         System.out.println("=============SVM Tuning=============");
-        SVMTuning();
+        SVMTuning(); 
+        
         System.out.println("=============J48 Classification=============");
         J48();
         System.out.println("=============J48 Tuning=============");
-        J48Tuning();
+        J48Tuning(); 
 
     }
 
@@ -84,7 +85,7 @@ public class Main {
 		(new AdaBoostM1Tuning()).exec();
 	}
 
-      public static void OneR() {
+    public static void OneR() {
 		(new OneRClassifier()).exec();
 	}
     public static void IBk() {
