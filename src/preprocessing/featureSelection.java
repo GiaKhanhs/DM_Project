@@ -1,12 +1,8 @@
 package preprocessing;
 
+import weka.attributeSelection.*;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
-import weka.attributeSelection.AttributeSelection;
-import weka.attributeSelection.CfsSubsetEval;
-import weka.attributeSelection.GreedyStepwise;
-import weka.attributeSelection.Ranker;
-import weka.attributeSelection.ReliefFAttributeEval;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;

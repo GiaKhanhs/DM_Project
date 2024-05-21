@@ -7,11 +7,12 @@ import weka.classifiers.trees.ExtraTree;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class ExtraTreeTuning implements Command{
+public class ExtraTreeTuning implements Command {
     public static void main(String[] args) {
         Command cmd = new RandomForestTuning();
         cmd.exec();
     }
+
     private static void setClassIndex(Instances dataset) {
         if (dataset.classIndex() == -1) {
             dataset.setClassIndex(dataset.numAttributes() - 1);
@@ -20,7 +21,7 @@ public class ExtraTreeTuning implements Command{
 
     @Override
     public void exec() {
-        try{
+        try {
             // Load datasets
             DataSource trainSource = new DataSource("data\\family\\training_data.arff");
             Instances trainingDataSet = trainSource.getDataSet();
@@ -84,7 +85,7 @@ public class ExtraTreeTuning implements Command{
             // Evaluate the classifier on the test dataset
             Evaluation testEval = new Evaluation(trainingDataSet);
             testEval.evaluateModel(finalET, testingDataSet);
-            
+
             // Output the evaluation results
             System.out.println(testEval.toSummaryString());
 

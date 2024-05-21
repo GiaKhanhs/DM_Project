@@ -6,7 +6,7 @@ import weka.classifiers.trees.ExtraTree;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class ExtraTreeClassifier implements Command{
+public class ExtraTreeClassifier implements Command {
     public static void main(String[] args) {
         Command cmd = new ExtraTreeClassifier();
         cmd.exec();

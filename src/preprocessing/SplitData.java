@@ -1,8 +1,8 @@
 package preprocessing;
 
 import weka.core.Instances;
-import weka.core.converters.ConverterUtils.DataSource;
 import weka.core.converters.ArffSaver;
+import weka.core.converters.ConverterUtils.DataSource;
 
 import java.io.File;
 import java.util.Random;

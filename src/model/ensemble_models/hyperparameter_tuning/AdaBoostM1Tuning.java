@@ -8,10 +8,11 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class AdaBoostM1Tuning implements Command {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Command cmd = new RandomForestTuning();
         cmd.exec();
     }
+
     private static void setClassIndex(Instances dataset) {
         if (dataset.classIndex() == -1) {
             dataset.setClassIndex(dataset.numAttributes() - 1);
@@ -103,7 +104,7 @@ public class AdaBoostM1Tuning implements Command {
             System.out.println("F-Measure = " + testEval.fMeasure(1));
             System.out.println("Error Rate = " + testEval.errorRate());
             System.out.println(testEval.toClassDetailsString());
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }

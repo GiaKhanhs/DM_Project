@@ -1,12 +1,36 @@
 package model.based_models.hyperparameter_tuning;
+
 import model.Command;
-import weka.classifiers.functions.Logistic;
 import weka.classifiers.evaluation.Evaluation;
+import weka.classifiers.functions.Logistic;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class LogisticRegressionTuning implements Command {
+
+    /**
+     * Load a dataset from an ARFF file.
+     *
+     * @param filePath the path to the ARFF file
+     * @return the loaded Instances object
+     * @throws Exception if there is an error loading the dataset
+     */
+    private static Instances loadDataset(String filePath) throws Exception {
+        DataSource source = new DataSource(filePath);
+        return source.getDataSet();
+    }
+
+    /**
+     * Set the class index to the last attribute if it is not already set.
+     *
+     * @param dataset the Instances object
+     */
+    private static void setClassIndex(Instances dataset) {
+        if (dataset.classIndex() == -1) {
+            dataset.setClassIndex(dataset.numAttributes() - 1);
+        }
+    }
 
     public void exec() {
         try {
@@ -65,29 +89,6 @@ public class LogisticRegressionTuning implements Command {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    /**
-     * Load a dataset from an ARFF file.
-     *
-     * @param filePath the path to the ARFF file
-     * @return the loaded Instances object
-     * @throws Exception if there is an error loading the dataset
-     */
-    private static Instances loadDataset(String filePath) throws Exception {
-        DataSource source = new DataSource(filePath);
-        return source.getDataSet();
-    }
-
-    /**
-     * Set the class index to the last attribute if it is not already set.
-     *
-     * @param dataset the Instances object
-     */
-    private static void setClassIndex(Instances dataset) {
-        if (dataset.classIndex() == -1) {
-            dataset.setClassIndex(dataset.numAttributes() - 1);
         }
     }
 }

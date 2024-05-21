@@ -1,10 +1,10 @@
 package model.ensemble_models.hyperparameter_tuning;
 
-import weka.core.Instances;
-import weka.classifiers.trees.RandomForest;
-import weka.classifiers.meta.CVParameterSelection;
 import model.Command;
 import weka.classifiers.Evaluation;
+import weka.classifiers.meta.CVParameterSelection;
+import weka.classifiers.trees.RandomForest;
+import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class RandomForestTuning implements Command {
@@ -50,7 +50,7 @@ public class RandomForestTuning implements Command {
             ps.setNumFolds(10); // 10-fold cross-validation
             ps.addCVParameter("I 10 100 10"); // Number of trees (10 to 100 in steps of 10)
             ps.addCVParameter("K 0 20 1"); // Number of features (0 to 20 in steps of 1)
-                
+
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);
 
@@ -68,7 +68,7 @@ public class RandomForestTuning implements Command {
                 bestAccuracy = eval.pctCorrect();
                 bestOptions = ps.getBestClassifierOptions();
             }
-            
+
             // Set up the output
             System.out.println("\nPost-tuning RandomForest\n======\n");
 
@@ -105,7 +105,7 @@ public class RandomForestTuning implements Command {
             System.out.println("Error Rate = " + testEval.errorRate());
             System.out.println(testEval.toClassDetailsString());
         } catch (Exception e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }

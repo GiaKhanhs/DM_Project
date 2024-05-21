@@ -17,10 +17,10 @@ public class RemoveAttributes {
         // Setup filter
         Remove remove = new Remove();
         remove.setAttributeIndices("1-4, 7, 8, 10-12, 14, 16, 18-22, 24, 25");   //Remove attributes of Family
-            //remove.setAttributeIndices("1-4, 6-11, 13-18, 21-25");  Remove attributes of Work
-            //remove.setAttributeIndices("1, 2, 4, 5, 7-10, 12, 13, 17, 19-25"); Remove attributes of Love
-            //remove.setAttributeIndices("1-5, 7-10, 12-17, 19-23, 25");  Remove attributes of Self
-            //remove.setAttributeIndices("1-4, 8-10, 12-20, 22, 24, 25");  //Remove attributes of Study
+        //remove.setAttributeIndices("1-4, 6-11, 13-18, 21-25");  Remove attributes of Work
+        //remove.setAttributeIndices("1, 2, 4, 5, 7-10, 12, 13, 17, 19-25"); Remove attributes of Love
+        //remove.setAttributeIndices("1-5, 7-10, 12-17, 19-23, 25");  Remove attributes of Self
+        //remove.setAttributeIndices("1-4, 8-10, 12-20, 22, 24, 25");  //Remove attributes of Study
         remove.setInputFormat(data);
 
         // Apply filter
