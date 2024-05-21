@@ -43,8 +43,8 @@ public class SVMParameterTuning implements Command {
 
                 CVParameterSelection ps = new CVParameterSelection();
                 ps.setClassifier(smo);
-                ps.setNumFolds(5); // 5-fold cross-validation
-                ps.addCVParameter("C -0.1 1 10");
+                ps.setNumFolds(10); // 10-fold cross-validation
+                ps.addCVParameter("C 0 1 10");
 
                 // Perform cross-validation to find the best parameters on the validation dataset
                 ps.buildClassifier(validDataset);

@@ -25,8 +25,10 @@ public class J48Tuning implements Command {
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(new J48());
             ps.setNumFolds(10); // 10-fold cross-validation
+
+            // Add parameters to be optimized
             ps.addCVParameter("M 2 10 1");
-            
+
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);
 
