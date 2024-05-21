@@ -39,6 +39,9 @@ public class RandomForestClassifier implements Command {
             Evaluation eval = new Evaluation(trainingDataSet);
             eval.evaluateModel(forest, testingDataSet);
 
+            // Print the parameters of the RandomForest model
+            System.out.println("RandomForest parameters: " + String.join(" ", forest.getOptions()));
+
             // Output the evaluation results
             System.out.println(eval.toSummaryString("\nPre-tuning RandomForest\n======\n", false));
 

@@ -48,8 +48,8 @@ public class ExtraTreeTuning implements Command{
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(ET);
             ps.setNumFolds(10); // 10-fold cross-validation
-            ps.addCVParameter("K 1 10 1"); // Number of attributes to randomly choose at a node
-            ps.addCVParameter("N 1 10 1"); // Minimum number of instances required at a node for splitting
+            ps.addCVParameter("K 10 20 1"); // Number of attributes to randomly choose at a node
+            ps.addCVParameter("N 10 20 1"); // Minimum number of instances required at a node for splitting
 
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);
@@ -70,7 +70,7 @@ public class ExtraTreeTuning implements Command{
             }
 
             // Set up the output
-            System.out.println("\nPost-tuning RandomForest\n======\n");
+            System.out.println("\nPost-tuning ExtraTree\n======\n");
 
             // Print the best parameters
             System.out.println("Best Parameters: " + String.join(" ", bestOptions));

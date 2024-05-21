@@ -25,7 +25,7 @@ public class Main {
         System.out.println("=============RandomForestTuning Classification=============");
         RandomForestTuning();
 
-        // AdaBoostM1
+        // // AdaBoostM1
         System.out.println("=============AdaBoostM1 Classification=============");
         AdaBoostM1();
 
@@ -39,22 +39,31 @@ public class Main {
         System.out.println("=============ExtraTreeTuning Classification=============");
         ExtraTreeTuning(); 
 
+        // OneR
         System.out.println("=============OneR Classification=============");
         OneR();
+
+        // IBk
         System.out.println("=============IBK Classification============="); 
         IBk();
+
+        // Naive Bayes
+        System.out.println("=============Naive Bayes Classification=============");
+        NB(); 
+
+        // Logistic Regression
         System.out.println("=============Logistic Regression Classification=============");
         LR();
         System.out.println("=============Logistic Regression Tuning=============");
         LRTuning();
-        System.out.println("=============Naive Bayes Classification=============");
-        NB(); 
+
+        // SVM
         System.out.println("=============SVM Classification=============");
         SVM();
         System.out.println("=============SVM Tuning=============");
         SVMTuning(); 
         
-        
+        //J48
         System.out.println("=============J48 Classification=============");
         J48();
         System.out.println("=============J48 Tuning=============");

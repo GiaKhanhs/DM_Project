@@ -39,6 +39,9 @@ public class AdaBoostM1Classifier implements Command {
             Evaluation eval = new Evaluation(trainingDataSet);
             eval.evaluateModel(ada, testingDataSet);
 
+            // Print the parameters of the RandomForest model
+            System.out.println("RandomForest parameters: " + String.join(" ", ada.getOptions()));
+
             // Output the evaluation results
             System.out.println(eval.toSummaryString("\nPre-tuning AdaBoostM1\n======\n", false));
 
