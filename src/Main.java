@@ -8,7 +8,7 @@ import model.ensemble_models.hyperparameter_tuning.RandomForestTuning;
 import model.ensemble_models.models.AdaBoostM1Classifier;
 import model.ensemble_models.models.ExtraTreeClassifier;
 import model.ensemble_models.models.RandomForestClassifier;
-import weka.core.converters.ConverterUtils.DataSource;
+import preprocessing.dataImporter;
 
 
 public class Main {
@@ -67,64 +67,53 @@ public class Main {
 
     }
 
-    public static DataSource trainSource;
-    public static DataSource testSource;
-
-    {
-        try {
-            trainSource = new DataSource("data/family/training_data.arff");
-            testSource = new DataSource("data/family/test_data.arff");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static void RandomForest() {
-        (new RandomForestClassifier()).exec(trainSource, testSource);
+        (new RandomForestClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void RandomForestTuning() {
-        (new RandomForestTuning()).exec();
+        (new RandomForestTuning()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void ExtraTree() {
-        (new ExtraTreeClassifier()).exec();
+        (new ExtraTreeClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void ExtraTreeTuning() {
-        (new ExtraTreeTuning()).exec();
+        (new ExtraTreeTuning()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void AdaBoostM1() {
-        (new AdaBoostM1Classifier()).exec();
+        (new AdaBoostM1Classifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void AdaBoostM1Tuning() {
-        (new AdaBoostM1Tuning()).exec();
+        (new AdaBoostM1Tuning()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void OneR() {
-        (new OneRClassifier()).exec();
+        (new OneRClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void IBk() {
-        (new IBkClassifier()).exec();
+        (new IBkClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void LR() {
-        (new LogisticRegressionClassifier()).exec();
+        (new LogisticRegressionClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void NB() {
-        (new NaiveBayesClassifier()).exec();
+        (new NaiveBayesClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void SVM() {
-        (new SVMClassifier()).exec();
+        (new SVMClassifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void J48() {
-        (new J48Classifier()).exec();
+        (new J48Classifier()).exec(dataImporter.trainSource, dataImporter.testSource);
     }
 
     public static void LRTuning() {
