@@ -5,7 +5,6 @@ import model.Command;
 import weka.classifiers.evaluation.Evaluation;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.Instances;
-import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class J48Tuning implements Command {
@@ -26,8 +25,8 @@ public class J48Tuning implements Command {
             CVParameterSelection ps = new CVParameterSelection();
             ps.setClassifier(new J48());
             ps.setNumFolds(10); // 10-fold cross-validation
-            ps.addCVParameter("M 50 150 1"); 
-
+            ps.addCVParameter("M 2 10 1");
+            
             // Perform cross-validation to find the best parameters on the validation dataset
             ps.buildClassifier(validDataset);
 
