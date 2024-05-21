@@ -1,107 +1,107 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "J48Tuning",
-            "request": "launch",
-            "mainClass": "model.based_models.hyperparameter_tuning.J48Tuning",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "LogisticRegressionTuning",
-            "request": "launch",
-            "mainClass": "model.based_models.hyperparameter_tuning.LogisticRegressionTuning",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "SVMParameterTuning",
-            "request": "launch",
-            "mainClass": "model.based_models.hyperparameter_tuning.SVMParameterTuning",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "IBkClassifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.IBkClassifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "J48Classifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.J48Classifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "LogisticRegressionClassifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.LogisticRegressionClassifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "NaiveBayesClassifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.NaiveBayesClassifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "OneRClassifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.OneRClassifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "SVMClassifier",
-            "request": "launch",
-            "mainClass": "model.based_models.models.SVMClassifier",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "dataProcessor",
-            "request": "launch",
-            "mainClass": "preprocessing.dataProcessor",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "Launch PieALL",
-            "request": "launch",
-            "mainClass": "preprocessing.helloFX.PieChartAll",
-            "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
-            "projectName": "DM_Project_945f5055"
-        },
-        {
-            "type": "java",
-            "name": "Launch PieFactor",
-            "request": "launch",
-            "mainClass": "preprocessing.helloFX.PieChartFactors",
-            "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
-            "projectName": "DM_Project_945f5055"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "J48Tuning",
+      "request": "launch",
+      "mainClass": "model.based_models.hyperparameter_tuning.J48Tuning",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "LogisticRegressionTuning",
+      "request": "launch",
+      "mainClass": "model.based_models.hyperparameter_tuning.LogisticRegressionTuning",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "SVMParameterTuning",
+      "request": "launch",
+      "mainClass": "model.based_models.hyperparameter_tuning.SVMParameterTuning",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "IBkClassifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.IBkClassifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "J48Classifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.J48Classifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "LogisticRegressionClassifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.LogisticRegressionClassifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "NaiveBayesClassifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.NaiveBayesClassifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "OneRClassifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.OneRClassifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "SVMClassifier",
+      "request": "launch",
+      "mainClass": "model.based_models.models.SVMClassifier",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "dataProcessor",
+      "request": "launch",
+      "mainClass": "preprocessing.dataProcessor",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "Launch PieALL",
+      "request": "launch",
+      "mainClass": "preprocessing.helloFX.PieChartAll",
+      "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
+      "projectName": "DM_Project_945f5055"
+    },
+    {
+      "type": "java",
+      "name": "Launch PieFactor",
+      "request": "launch",
+      "mainClass": "preprocessing.helloFX.PieChartFactors",
+      "vmArgs": "--module-path D:/Set_up/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
+      "projectName": "DM_Project_945f5055"
+    }
+  ]
 }
