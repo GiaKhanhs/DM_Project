@@ -1,7 +1,4 @@
 <div id="top" align="center">
-
-[//]: # (<img src="image/mindfulness.png" alt="Banner">)
-
 </div>
 <!-- PROJECT LOGO -->
 <div align="center">
@@ -34,27 +31,43 @@
 |  5  |    Nguyen Hai Ngoc     | ITDSIU21057  | ITDSIU21057@student.hcmiu.edu.vn | [haingocnguyen](https://github.com/haingocnguyen) | Implement classification/prediction algorithms in Java, Bug fixing |     20%      |
 
 ## 2. The project we are working on
-The project investigates depression in Vietnamese teenagers aged 15-25 using modern data mining methods, highlighting the need for culturally sensitive early detection strategies to reduce mental health issues.
+
+The project investigates depression in Vietnamese teenagers aged 15-25 using modern data mining methods, highlighting
+the need for culturally sensitive early detection strategies to reduce mental health issues.
 
 ## 3. Goal
+
 - Use machine learning models to accurately predict depression levels among Vietnamese students.
 - Tests a range of complex machine learning model approaches to identify the most successful ones.
 - Increase the endurance and effectiveness of these classification models by including more potent algorithms.
-- Apply data mining techniques to real-world datasets to bridge the gap between theoretical research and practical application.
-- Empower healthcare practitioners to make more informed clinical decisions and enhance the mental health of Vietnamese students through early detection and intervention.
+- Apply data mining techniques to real-world datasets to bridge the gap between theoretical research and practical
+  application.
+- Empower healthcare practitioners to make more informed clinical decisions and enhance the mental health of Vietnamese
+  students through early detection and intervention.
 
 # REASON
 
 ## 1. Motivation
-Depression awareness in Vietnam has increased due to the Internet, but the public's willingness to seek screenings remains low. Self-assessment programs like "15minutes4me" offer hope, but they often rely on predetermined symptoms, overlooking the complex interplay between living environment and stress. This data mining project aims to predict depression levels among Vietnamese students aged 15 to 25 by investigating environmental factors and pressures. Building on prior research, the study uses a classification model and analytic techniques to provide a more nuanced understanding of depression among Vietnamese students.
+
+Depression awareness in Vietnam has increased due to the Internet, but the public's willingness to seek screenings
+remains low. Self-assessment programs like "15minutes4me" offer hope, but they often rely on predetermined symptoms,
+overlooking the complex interplay between living environment and stress. This data mining project aims to predict
+depression levels among Vietnamese students aged 15 to 25 by investigating environmental factors and pressures. Building
+on prior research, the study uses a classification model and analytic techniques to provide a more nuanced understanding
+of depression among Vietnamese students.
 
 ## 2. Idea
-Using machine learning model built on top of classification algorithms, to improve prediction accuracy in various sectors, particularly in measuring depression levels among Vietnamese students. Advanced algorithms like Support Vector Machine, Naive Bayes, and K-Nearest Neighbors are used to manage large datasets, identify patterns, and make accurate predictions.
+
+Using machine learning model built on top of classification algorithms, to improve prediction accuracy in various
+sectors, particularly in measuring depression levels among Vietnamese students. Advanced algorithms like Support Vector
+Machine, Naive Bayes, and K-Nearest Neighbors are used to manage large datasets, identify patterns, and make accurate
+predictions.
 
 ## 3. Roadmap
+
 - [X] Data collecting
 - [X] Data pre-processing
-- [ ] Build model to classify
+- [X] Build model to classify
 - [ ] Deploy AI Chatbot based on the result
 - [ ] More to come...
 
@@ -64,25 +77,36 @@ and known issues).
 # METHODOLOGY (based on theory class)
 
 ## 1. Ask a question
-This study focuses on predicting depression levels among Vietnamese students using data mining techniques. It investigates the accuracy of machine learning algorithms and their practical implications for early detection and intervention, aiming to improve students' well-being and academic performance.
+
+This study focuses on predicting depression levels among Vietnamese students using data mining techniques. It
+investigates the accuracy of machine learning algorithms and their practical implications for early detection and
+intervention, aiming to improve students' well-being and academic performance.
 
 ## 2. Data gathering
-The research used a systematic approach to gather data on stress and pressure among Vietnamese students. A Google Form survey was created based on various studies and conversations with university specialists. The survey identified five main causes of stress: employment, studies, self, family, and love. The Patient Health Questionnaire (PHQ-9) was used to assess depression risk. The survey was distributed to a diverse group of Vietnamese students, ensuring confidentiality and anonymity. The data collected was evaluated for quality and completeness, aiming to improve knowledge and early detection of depression among Vietnamese students.
+
+The research used a systematic approach to gather data on stress and pressure among Vietnamese students. A **Google Form**
+survey was created based on various studies and conversations with university specialists. The survey identified five
+main causes of stress: employment, studies, self, family, and love. The Patient Health Questionnaire (PHQ-9) was used to
+assess depression risk. The survey was distributed to a diverse group of Vietnamese students, ensuring confidentiality
+and anonymity. The data collected was evaluated for quality and completeness, aiming to improve knowledge and early
+detection of depression among Vietnamese students.
 
 ## 3. Data cleaning
+
 (to be updated)
 
-## 4. Feature extraction & Model building
+## 4. Model building
+
 (to be updated)
 
 ## 5. Return the result
-(to be updated)
+
 
 # INSTALLATION
 
 ## Required software
 
-* Java Development Kit (i.e. OpenJDK) [CLICK TO DOWNLOAD](https://openjdk.org/)
+* Java Development Kit 17++ (i.e. OpenJDK) [CLICK TO DOWNLOAD](https://openjdk.org/)
 * Any Java IDE (i.e. JetBrains IntelliJ IDEA) [CLICK TO DOWNLOAD](https://www.jetbrains.com/idea/download/)
 
 ## Steps
@@ -91,18 +115,63 @@ The research used a systematic approach to gather data on stress and pressure am
    ```sh
    git clone https://github.com/GiaKhanhs/DM_Project.git
    ```
-2. Open in a Java IDE
-3. (not implemented) Click on `main.java` and Run button 
+2. Open in a Java IDE (preferably JetBrains IntelliJ IDEA)
+3. Now click on File > Project Structure... > Library. Click on (+) button on point to the `lib` folder, add the
+   following libraries:
+
+- `lib/weka.jar` for Weka main library
+- `lib/extraTrees.jar` for ExtraTrees library
+- `lib/javafx-sdk-osx-arm64/lib` for JavaFX on **Apple Silicon Macs**
+  or `lib/javafx-sdk-win64/lib` for JavaFX on **Intel/AMD Windows PC**. For others platform, please refer
+  to [here](https://gluonhq.com/products/javafx/) and download `JavaFX v22.0.1` for your platform.
+
+4. Open `src/preprocessing/dataImporter.java` and replace the dataset you want to explore in the **try** block.
+    ```java  
+   // macOS/Unix          
+    trainSource = new DataSource("data/family/training_data.arff");
+    testSource = new DataSource("data/family/test_data.arff");
+    validSource = new DataSource("data/family/validation_data.arff");
+    // Windows
+    trainSource = new DataSource("data\\family\\training_data.arff");
+    testSource = new DataSource("data\\family\\test_data.arff");
+    validSource = new DataSource("data\\family\\validation_data.arff");
+    ```
+
+5. Open `src/Main.java` and click on **RUN** button to see the result
+6. To see the visualization, open either `src/preprocessing/helloFX/PieChartAll.java`
+   or `src/preprocessing/helloFX/PieChartFactors.java`, then click on Run > Edit Configurations and add the VM like this
+   on macOS/Unix
+    ```txt
+    FOR macOS/Unix: --module-path /absolute/path/to/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml
+    FOR Windows:    --module-path "\path\to\javafx-sdk-22.0.1\lib" --add-modules javafx.controls,javafx.fxml
+    ```
+
+then click on **Run** to see the result
 
 # RESULT
 
 ## Exploratory Data Analysis
 
-The study analyzed data from 1,500 Vietnamese students, with 739 being female and 761 being male. It revealed that females are more prone to severe depression and have a higher risk of self-harm. Family and work-related stressors were significant contributors to depression among female students. Physical activity was associated with lower levels of depression, and students whose parents spoiled were more prone to develop depression later in life. Academic stress was a major concern for high school and first-year college students, while graduates and fourth-year college students were more concerned with employment and finances. The LGBT community also experienced significant stress due to familial and personal concerns. Workplace stress was a major problem, particularly among females. Academic stress, school bullying, parental expectations, instructor partiality, and peer pressure were also significant contributors. Romantic relationships were a major stressor for Vietnamese students, contributing to anxiety and emotional illnesses. Family-related stress was a major concern, with high parental expectations, mistaken caring, and financial issues.
+![Level_UI.png](demo/Level_UI.png)
+The study analyzed data from 1,500 Vietnamese students, with 739 being female and 761 being male. It revealed that
+females are more prone to severe depression and have a higher risk of self-harm. Family and work-related stressors were
+significant contributors to depression among female students.
+
+![Factors_UI.png](demo/Factors_UI.png)
+Physical activity was associated with lower levels of
+depression, and students whose parents spoiled were more prone to develop depression later in life. Academic stress was
+a major concern for high school and first-year college students, while graduates and fourth-year college students were
+more concerned with employment and finances. The LGBT community also experienced significant stress due to familial and
+personal concerns. Workplace stress was a major problem, particularly among females. Academic stress, school bullying,
+parental expectations, instructor partiality, and peer pressure were also significant contributors. Romantic
+relationships were a major stressor for Vietnamese students, contributing to anxiety and emotional illnesses.
+Family-related stress was a major concern, with high parental expectations, mistaken caring, and financial issues.
 
 ## Model performance
 
 (to be updated)
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQVJ0OMRFO8Qe0KiMDKrPRrWlWDz-eZrH04Knn0yB1prtAaX7YmRjkX9ejF5I1U612yqPo2s_PJxKbZ/pubhtml#
+
 
 **(and more to explore for you to contribute in our application...)**
 
