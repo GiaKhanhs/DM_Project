@@ -1,0 +1,46 @@
+Model,Dataset,Pre-tuning,Post-tuning,Post-tuning (validation)
+Random Forest,family,61.7647,67.6471,81.4815
+Random Forest,love,64.2857,64.2857,72.7273
+Random Forest,self,79.6875,81.2500,80.3922
+Random Forest,study,86.0759,87.3418,82.5397
+Random Forest,work,84.3750,85.4167,85.5263
+AdaBoostM1,family,47.0588,47.0588,37.0370
+AdaBoostM1,love,21.4286,21.4286,40.9091
+AdaBoostM1,self,37.5000,37.5000,31.3725
+AdaBoostM1,study,36.7089,36.7089,39.6825
+AdaBoostM1,work,41.6667,41.6667,55.2632
+ExtraTree,family,47.0588,58.8235,62.9630
+ExtraTree,love,71.4286,71.4286,59.0909
+ExtraTree,self,56.25,57.8125,68.6275
+ExtraTree,study,59.4937,72.1519,69.8413
+ExtraTree,work,69.7917,72.9167,75.0000
+NaiveBayes,family,52.9412,None applicable,None applicable
+NaiveBayes,love,64.2857,None applicable,None applicable
+NaiveBayes,self,87.5000,None applicable,None applicable
+NaiveBayes,study,81.0127,None applicable,None applicable
+NaiveBayes,work,83.3333,None applicable,None applicable
+Logistics Regression,family,70.5882,70.5882,74.0741
+Logistics Regression,love,53.5714,53.5714,77.2727
+Logistics Regression,self,87.5000,89.0625,94.1146
+Logistics Regression,study,94.9367,94.9367,88.8889
+Logistics Regression,work,93.7500,93.7500,94.7368
+SVM,family,82.3529,88.2353,77.7778
+SVM,love,75.0000,78.5714,81.8182
+SVM,self,85.9375,84.3750,90.1961
+SVM,study,87.3418,93.6709,88.8889
+SVM,work,90.6250,88.5417,96.0526
+OneR,family,52.9412,None applicable,None applicable
+OneR,love,39.2857,None applicable,None applicable
+OneR,self,54.6875,None applicable,None applicable
+OneR,study,41.7722,None applicable,None applicable
+OneR,work,45.8333,None applicable,None applicable
+J48,family,67.6471,67.6471,55.5556
+J48,love,46.4286,46.4286,40.9091
+J48,self,62.5000,62.5000,68.6275
+J48,study,69.6203,69.6203,77.7778
+J48,work,70.8333,70.8333,73.6842
+IBk,family,70.5882,None applicable,None applicable
+IBk,love,78.5714,None applicable,None applicable
+IBk,self,76.5625,None applicable,None applicable
+IBk,study,82.2785,None applicable,None applicable
+IBk,work,79.1667,None applicable,None applicable

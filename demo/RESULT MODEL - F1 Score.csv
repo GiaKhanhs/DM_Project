@@ -1,0 +1,46 @@
+Model,Dataset,Pre-tuning,Post-tuning,Post-tuning (validation)
+Random Forest,family,0.6316,0.6667,0.7273
+Random Forest,love,0.6,0.6,0.7692
+Random Forest,self,0.7500,0.7879,0.7692
+Random Forest,study,0.9091,0.9091,0.8571
+Random Forest,work,0.9259,0.9259,0.9206
+AdaBoostM1,family,0.56,0.56,0.6667
+AdaBoostM1,love,Non-applicable,Non-applicable,Non-applicable
+AdaBoostM1,self,0.5806,0.5806,0.5000
+AdaBoostM1,study,0.5977,0.5977,0.6032
+AdaBoostM1,work,0.5455,0.5455,0.7033
+ExtraTree,family,0.5455,0.5882,0.6154
+ExtraTree,love,0.7273,0.7273,0.5000
+ExtraTree,self,0.5405,0.4000,0.6250
+ExtraTree,study,0.6774,0.8302,0.7805
+ExtraTree,work,0.7308,0.7273,0.8438
+NaiveBayes,family,0.7777,Non-applicable,Non-applicable
+NaiveBayes,love,0.6667,Non-applicable,Non-applicable
+NaiveBayes,self,0.8824,Non-applicable,Non-applicable
+NaiveBayes,study,0.8519,Non-applicable,Non-applicable
+NaiveBayes,work,0.8846,Non-applicable,Non-applicable
+Logistics Regression,family,0.6,0.6,0.6667
+Logistics Regression,love,0.7272,0.7272,0.8571
+Logistics Regression,self,0.8125,0.8125,0.8421
+Logistics Regression,study,0.9434,0.9434,0.9189
+Logistics Regression,work,0.9388,0.9388,0.9841
+SVM,family,0.6666,0.8235,0.6667
+SVM,love,0.8,0.8,0.7692
+SVM,self,0.8824,0.8824,0.8887
+SVM,study,0.9057,0.9643,0.9474
+SVM,work,0.8889,0.8846,0.9846
+OneR,family,0.4211,Non-applicable,Non-applicable
+OneR,love,Non-applicable,Non-applicable,Non-applicable
+OneR,self,Non-applicable,Non-applicable,Non-applicable
+OneR,study,0.5977,Non-applicable,Non-applicable
+OneR,work,0.5902,Non-applicable,Non-applicable
+J48,family,0.5333,0.5333,0.6154
+J48,love,0,0,0.3333
+J48,self,0.5517,0.5517,0.7692
+J48,study,0.8214,0.8214,0.7805
+J48,work,0.6531,0.6531,0.8387
+IBk,family,0.7059,Non-applicable,Non-applicable
+IBk,love,0.8,Non-applicable,Non-applicable
+IBk,self,0.7647,Non-applicable,Non-applicable
+IBk,study,0.8214,Non-applicable,Non-applicable
+IBk,work,0.8077,Non-applicable,Non-applicable

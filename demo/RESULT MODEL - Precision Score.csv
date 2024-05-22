@@ -1,0 +1,46 @@
+Model,Dataset,Pre-tuning,Post-tuning,Post-tuning (validation)
+Random Forest,family,0.6667,0.7500,0.8000
+Random Forest,love,0.7500,0.7500,0.7143
+Random Forest,self,0.9231,0.9286,1.0000
+Random Forest,study,0.8929,0.8929,0.8182
+Random Forest,work,0.8621,0.8621,0.9355
+AdaBoostM1,family,0.4667,0.4667,0.5000
+AdaBoostM1,love,None applicable,None applicable,None applicable
+AdaBoostM1,self,0.4186,0.4186,0.3500
+AdaBoostM1,study,0.4333,0.4333,0.4419
+AdaBoostM1,work,0.3810,0.3810,0.5424
+ExtraTree,family,0.5000,0.7143,0.5714
+ExtraTree,love,0.8000,0.8000,0.5000
+ExtraTree,self,0.5556,0.5455,0.625
+ExtraTree,study,0.6000,0.8462,0.7619
+ExtraTree,work,0.7037,0.6667,0.8438
+NaiveBayes,family,0.8750,None applicable,None applicable
+NaiveBayes,love,0.6667,None applicable,None applicable
+NaiveBayes,self,1.0000,None applicable,None applicable
+NaiveBayes,study,0.8519,None applicable,None applicable
+NaiveBayes,work,0.8519,None applicable,None applicable
+Logistics Regression,family,0.6000,0.6000,0.6667
+Logistics Regression,love,0.8000,0.8000,0.7500
+Logistics Regression,self,1.0000,1.0000,0.7272
+Logistics Regression,study,0.9615,0.9615,1.0000
+Logistics Regression,work,0.9583,0.9583,1.0000
+SVM,family,0.7500,1.0000,1.0000
+SVM,love,1.0000,1.0000,0.7143
+SVM,self,1.0000,1.0000,0.8000
+SVM,study,0.9231,0.9310,1.0000
+SVM,work,0.8276,0.8519,0.9697
+OneR,family,0.4444,None applicable,None applicable
+OneR,love,None applicable,None applicable,None applicable
+OneR,self,None applicable,None applicable,None applicable
+OneR,study,0.4333,None applicable,None applicable
+OneR,work,0.5000,None applicable,None applicable
+J48,family,0.8000,0.8000,0.5714
+J48,love,0.0000,0.0000,0.3333
+J48,self,0.8000,0.8000,1.0000
+J48,study,0.7931,0.7931,0.7619
+J48,work,0.6667,0.6667,0.8667
+IBk,family,0.8571,None applicable,None applicable
+IBk,love,1.0000,None applicable,None applicable
+IBk,self,0.8667,None applicable,None applicable
+IBk,study,0.7931,None applicable,None applicable
+IBk,work,0.7700,None applicable,None applicable
