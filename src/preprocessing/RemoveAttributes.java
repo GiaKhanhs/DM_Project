@@ -1,18 +1,18 @@
 package preprocessing;
 
 import weka.core.Instances;
-import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import static preprocessing.dataImporter.dataSource;
+
 public class RemoveAttributes {
     public static void removeAttributes() throws Exception {
         // Load dataset
-        DataSource source = new DataSource("data\\family\\family.arff");
-        Instances data = source.getDataSet();
+        Instances data = dataSource.getDataSet();
 
         // Setup filter
         Remove remove = new Remove();

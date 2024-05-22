@@ -2,16 +2,16 @@ package preprocessing;
 
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
-import weka.core.converters.ConverterUtils.DataSource;
 
 import java.io.File;
 import java.util.Random;
 
+import static preprocessing.dataImporter.dataSource;
+
 public class SplitData {
     public static void splitData() throws Exception {
         // Load dataset
-        DataSource source = new DataSource("data\\family\\family_FS.arff");
-        Instances allData = source.getDataSet();
+        Instances allData = dataSource.getDataSet();
 
         // Randomize the dataset with a seed
         allData.randomize(new Random(42));
